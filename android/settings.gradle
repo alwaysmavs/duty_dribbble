@@ -1,0 +1,3 @@
+rootProject.name = 'duty_dribbble'
+
+include ':app'
