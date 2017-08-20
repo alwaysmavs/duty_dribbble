@@ -15,7 +15,7 @@ export default class HomeScreen extends Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome} onPress={() => navigate('Detail')}>
-                    go to detail
+                    Go to detail
                 </Text>
             </View>
         );

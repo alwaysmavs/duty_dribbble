@@ -5,9 +5,9 @@ import {
     View
 } from 'react-native';
 
-export default class Detail extends Component {
+export default class Login extends Component {
     static navigationOptions = {
-        title: 'detail',
+        title: 'login',
     };
 
     render() {
@@ -15,7 +15,7 @@ export default class Detail extends Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.welcome}>
-                    Detail
+                    Login
                 </Text>
             </View>
         );
