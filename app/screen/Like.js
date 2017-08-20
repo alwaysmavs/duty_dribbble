@@ -5,25 +5,27 @@ import {
     View,
     Image
 } from 'react-native';
-import home from '../static/home.png';
-import home_focuse from '../static/home_focuse.png';
+import like from '../static/like.png';
+import like_focuse from '../static/like_focuse.png';
 
-export default class HomeScreen extends Component {
+export default class Like extends Component {
+
     static navigationOptions = {
-        title: 'dribbbe',
+        title: 'Like',
         tabBarIcon: ({ focused, tintColor }) =>
             <Image
                 style={styles.icon}
-                source={focused ? home_focuse : home}
+                source={focused ? like_focuse : like}
             />,
     };
+
 
     render() {
         const {navigate} = this.props.navigation;
         return (
             <View style={styles.container}>
-                <Text style={styles.welcome} onPress={() => navigate('Detail')}>
-                    Go to detail
+                <Text style={styles.welcome}>
+                    Like
                 </Text>
             </View>
         );
@@ -43,6 +45,6 @@ const styles = StyleSheet.create({
     },
     icon: {
         width: 20,
-        height: 20,
+        height: 17.14,
     },
 });

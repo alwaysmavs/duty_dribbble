@@ -2,28 +2,20 @@ import React, {Component} from 'react';
 import {
     StyleSheet,
     Text,
-    View,
-    Image
+    View
 } from 'react-native';
-import home from '../static/home.png';
-import home_focuse from '../static/home_focuse.png';
 
-export default class HomeScreen extends Component {
+export default class Search extends Component {
     static navigationOptions = {
-        title: 'dribbbe',
-        tabBarIcon: ({ focused, tintColor }) =>
-            <Image
-                style={styles.icon}
-                source={focused ? home_focuse : home}
-            />,
+        title: 'Search',
     };
 
     render() {
         const {navigate} = this.props.navigation;
         return (
             <View style={styles.container}>
-                <Text style={styles.welcome} onPress={() => navigate('Detail')}>
-                    Go to detail
+                <Text style={styles.welcome}>
+                    Search
                 </Text>
             </View>
         );
@@ -43,6 +35,6 @@ const styles = StyleSheet.create({
     },
     icon: {
         width: 20,
-        height: 20,
+        height: 17.143,
     },
 });

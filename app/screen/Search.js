@@ -5,16 +5,16 @@ import {
     View,
     Image
 } from 'react-native';
-import home from '../static/home.png';
-import home_focuse from '../static/home_focuse.png';
+import search from '../static/search.png';
+import search_focuse from '../static/search_focuse.png';
 
-export default class HomeScreen extends Component {
+export default class Search extends Component {
     static navigationOptions = {
-        title: 'dribbbe',
+        title: 'Search',
         tabBarIcon: ({ focused, tintColor }) =>
             <Image
                 style={styles.icon}
-                source={focused ? home_focuse : home}
+                source={focused ? search_focuse : search}
             />,
     };
 
@@ -22,8 +22,8 @@ export default class HomeScreen extends Component {
         const {navigate} = this.props.navigation;
         return (
             <View style={styles.container}>
-                <Text style={styles.welcome} onPress={() => navigate('Detail')}>
-                    Go to detail
+                <Text style={styles.welcome}>
+                    Search
                 </Text>
             </View>
         );
