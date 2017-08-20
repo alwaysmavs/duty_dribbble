@@ -20,7 +20,11 @@ const HomeNavigator = TabNavigator({
     tabBarOptions: {
         showIcon: 'true', // Shows an icon for both iOS and Android
         showLabel: false, //No label for Android
-    }
+        style:{
+            backgroundColor:'white'
+        }
+    },
+
 });
 
 const MainNavigator = StackNavigator({
