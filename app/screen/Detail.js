@@ -5,17 +5,17 @@ import {
     View
 } from 'react-native';
 
-export default class HomeScreen extends Component {
+export default class Detail extends Component {
     static navigationOptions = {
-        title: 'dribbbe',
+        title: 'detail',
     };
 
     render() {
         const {navigate} = this.props.navigation;
         return (
             <View style={styles.container}>
-                <Text style={styles.welcome} onPress={() => navigate('Detail')}>
-                    go to detail
+                <Text style={styles.welcome}>
+                    detail
                 </Text>
             </View>
         );
