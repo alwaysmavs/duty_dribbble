@@ -3,10 +3,14 @@ import {
     StyleSheet,
     Text,
     View,
-    Image
+    Image,
+    FlatList
 } from 'react-native';
 import search from '../static/search.png';
 import search_focuse from '../static/search_focuse.png';
+import {HomeScreenData} from '../mock_data/Data';
+import SearchScreenCell from '../component/SearchScreenCell';
+import {window} from '../Theme';
 
 export default class Search extends Component {
     static navigationOptions = {
@@ -16,15 +20,35 @@ export default class Search extends Component {
                 style={styles.icon}
                 source={focused ? search_focuse : search}
             />,
+        headerStyle:{
+            backgroundColor:'white'
+        }
     };
+
+    _keyExtractor = (item, index) => item.id;
+
+    _onPressItem(){
+        const {navigate} = this.props.navigation;
+    }
+
+    _renderItem = ({item}) => (
+        <SearchScreenCell
+            data={item}
+        />
+    );
 
     render() {
         const {navigate} = this.props.navigation;
         return (
             <View style={styles.container}>
-                <Text style={styles.welcome}>
-                    Search
-                </Text>
+                <FlatList
+                    data={HomeScreenData}
+                    extraData={this.state}
+                    keyExtractor={this._keyExtractor}
+                    renderItem={this._renderItem}
+                    horizontal={false}
+                    numColumns={3}
+                />
             </View>
         );
     }
@@ -32,9 +56,9 @@ export default class Search extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+        width:window.width,
+        height:window.height,
+        backgroundColor:'white',
     },
     welcome: {
         fontSize: 20,
